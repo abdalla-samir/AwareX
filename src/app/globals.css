@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #0f172a; /* headings */
+    --color-secondary: #475569; /* body text */
+    --color-tertiary: #94a3b8; /* placeholders / muted text */
+
+    --color-surface: #f8f9ff; /* background */
+    --color-border: #c7c9ca; /* borders */
+
+    --color-accent: #5546e5; /* buttons, links, badges' text */
+    --color-accent-hover: #4338ca;
+}
+
+@layer base {
+    h1,
+    h2,
+    h3 {
+        @apply text-primary;
+    }
+    h1 {
+        @apply text-[30px] font-bold;
+    }
+    h2 {
+        @apply text-[26px] font-bold;
+    }
+    h3 {
+        @apply text-[16px] font-medium;
+    }
+    p {
+        @apply text-[14px] text-secondary;
+    }
+    label {
+        @apply block;
+    }
+    label span {
+        @apply mb-1;
+    }
+    input[type="checkbox"] {
+        @apply cursor-pointer;
+    }
+    input[type="checkbox"] + span {
+        @apply ml-2;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply border border-border w-full p-2 transition rounded cursor-pointer block text-[16px] text-center;
+    }
+    .btn-primary {
+        @apply bg-accent hover:bg-accent-hover border-none text-white;
+    }
+    .btn-secondary {
+        @apply bg-white hover:bg-[#f1f5f9] text-black;
+    }
+}
